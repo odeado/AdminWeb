@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Administrador de Portadas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+      <div class="panel">
+
+<div id="estadoSistema" class="estado-card">
+
+    <div id="estadoIcono">
+        🟢
+    </div>
+
+    <div>
+        <div id="estadoTitulo">
+            Sistema Operativo
+        </div>
+
+        <div id="estadoDetalle">
+            Cargando...
+        </div>
+    </div>
+
+</div>
+
+          <div class="acciones">
+       
+
+        <button id="btnGuardar">Guardar</button>
+        <button id="btnRecargar">Recargar</button>
+        <button id="btnForzarEnvio">Enviar Forzado</button>
+        <button id="btnPreviewOutlook" style="background-color: #0284c7; border-color: #0284c7;">Preview Outlook</button>
+    </div>
+
+    <div class="tabs">
+
+    <button id="tabBtnCorreo" class="active">
+        Correo
+    </button>
+
+    <button id="tabBtnGeneral">
+        Configuración General
+    </button>
+
+</div>
+
+
+
+<div id="tabCorreo">
+
+
+    <h2>Configuración Correo</h2>
+
+    <label>Título</label>
+    <input id="TituloCorreo">
+
+    <label>Asunto</label>
+    <input id="Asunto">
+
+    <label>Subtítulo</label>
+    <input id="Subtitulo">
+
+    <label>Texto Principal</label>
+    <input id="TextoPrincipal">
+
+    <label>Texto Secundario</label>
+    <input id="TextoSecundario">
+
+    <label>Pie Página</label>
+    <input id="PiePagina">
+
+     <h3>Logos</h3> 
+
+    <button id="btnCambiarLogo">
+        Cambiar Logo Cabecera
+    </button>
+
+    <button id="btnCambiarLogoPie">
+        Cambiar Logo Pie
+    </button>
+
+<input
+    type="file"
+    id="logoFile"
+    accept="image/*"
+    style="display:none">
+
+<input
+    type="file"
+    id="logoPieFile"
+    accept="image/*"
+    style="display:none">
+
+    <div class="row">
+
+        <div>
+            <label>Color Cabecera</label>
+            <input type="color" id="ColorCabecera">
+        </div>
+
+
+        <div>
+            <label>Color Pie</label>
+            <input type="color" id="ColorPie">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div>
+            <label>Ancho Portada</label>
+            <input id="AnchoPortada">
+        </div>
+        
+
+        <div>
+            <label>Ancho Logo</label>
+            <input id="AnchoLogo">
+        </div>
+
+        <div>
+            <label>Ancho Logo Pie</label>
+            <input id="AnchoLogoPie">
+        </div>
+
+    </div>
+
+</div>
+
+<div id="tabGeneral" style="display:none;">
+
+    <h2>Configuración General</h2>
+
+    <label>Empresa</label>
+    <input id="Empresa">
+
+    <label>Correo Destino</label>
+    
+<div class="bloque-correos">
+        <div class="correo-agregar">
+
+            <input
+                id="correoNuevo"
+                list="listaHistorial"
+                placeholder="correo@empresa.cl">
+
+            <button
+                type="button"
+                id="btnAgregarCorreo">
+                Agregar
+            </button>
+
+        </div>
+
+    <datalist id="listaHistorial">
+    </datalist>
+
+
+
+<input
+    id="buscarCorreo"
+    placeholder="Buscar destinatario">
+
+    <select
+        id="CorreoDestino"
+        multiple
+        size="10">
+    </select>
+
+    <div id="contadorCorreos">
+        0 destinatarios
+    </div>
+
+   <div class="caja-cco">
+
+    <label for="UsarCCO">
+        Enviar usando Copia Oculta (CCO)
+    </label>
+
+    <input
+        type="checkbox"
+        id="UsarCCO">
+
+    </div>
+
+    <div class="acciones-correos">
+        <button
+            type="button"
+            id="btnEliminarCorreo">
+            Eliminar seleccionado
+        </button>
+
+        <button
+            type="button"
+            id="btnLimpiarCorreos">
+            Limpiar lista
+        </button>
+
+        </div>
+
+    <div class="importacion">
+
+    <textarea
+        id="correosMasivos"
+        rows="4"
+        placeholder="Pega varios correos, uno por línea">
+    </textarea>
+
+    <button id="btnImportarCorreos">
+        Importar varios
+    </button>
+
+    </div>
+    
+</div>
+
+    <label>Correo Remitente</label>
+    <input id="CorreoRemitente">
+
+    <label>Hora Inicio</label>
+    <input type="time" id="HoraInicio">
+
+    <label>Ruta Base (Local)</label>
+    <input id="RutaBase" placeholder="C:\Scripts\Portadas\">
+
+    <label>Ghostscript (Local)</label>
+    <input id="Ghostscript" placeholder="C:\Program Files\gs\gs10.02.1\bin\gswin64c.exe">
+
+</div>
+ 
+</div>
+    
+  <div class="panel preview">  
+     <h2>Vista previa</h2>
+
+
+
+    <div id="correoPreview">
+
+        <div id="cabecera">
+
+            <img src=""
+                 id="logoEmpresa">
+
+            <h1 id="pvTitulo"></h1>
+
+            <p id="pvSubtitulo"></p>
+
+        </div>
+
+        <div class="imagen">
+
+            <div id="portada" style="width: 400px; height: 300px; background: #cbd5e1; display: flex; align-items: center; justify-content: center; color: #64748b; border: 2px dashed #94a3b8;">
+                [Previsualización de Portada]
+            </div>
+
+        </div>
+
+        <div class="contenido">
+
+            <p id="pvTexto1"></p>
+
+            <p id="pvTexto2"></p>
+
+        </div>
+
+        <div id="pvPie">
+
+        </div>
+
+        <div id="pieLogo">
+
+            <img src=""
+                 id="logoPie">
+
+        </div>
+</div>
+
+    </div>
+    
+
+
+    
+
+
+     
+
+</div>
+
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
