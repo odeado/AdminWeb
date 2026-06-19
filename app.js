@@ -140,6 +140,8 @@ async function cargarConfigGeneral() {
     document.getElementById("Empresa").value = datos.Empresa || "";
     correosDestino = datos.CorreoDestino || [];
     document.getElementById("UsarCCO").checked = datos.UsarCCO || false;
+    document.getElementById("AdjuntarPDF").checked = datos.AdjuntarPDF !== undefined ? datos.AdjuntarPDF : true;
+    document.getElementById("RecorteInferior").value = datos.RecorteInferior !== undefined ? datos.RecorteInferior : 120;
     actualizarListaCorreos();
 
     document.getElementById("CorreoRemitente").value = datos.CorreoRemitente || "";
@@ -290,6 +292,8 @@ async function guardar() {
         Empresa: document.getElementById("Empresa").value,
         CorreoDestino: correosDestino,
         UsarCCO: document.getElementById("UsarCCO").checked,
+        AdjuntarPDF: document.getElementById("AdjuntarPDF").checked,
+        RecorteInferior: parseInt(document.getElementById("RecorteInferior").value, 10),
         CorreoRemitente: document.getElementById("CorreoRemitente").value,
         SmtpPassword: document.getElementById("SmtpPassword").value,
         SmtpServer: document.getElementById("SmtpServer").value,

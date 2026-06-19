@@ -242,6 +242,23 @@
     <label>Contraseña Correo</label>
     <input type="password" id="SmtpPassword">
 
+    <div class="row" style="margin-top: 1rem; margin-bottom: 1rem;">
+        <div>
+            <div class="caja-cco" style="margin-top: 0;">
+                <label for="AdjuntarPDF" style="margin-top: 0; font-weight: 500; color: white;">
+                    Adjuntar PDF original al correo
+                </label>
+                <input type="checkbox" id="AdjuntarPDF" checked>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">Si se desmarca, el correo se enviará más ligero, sólo con la imagen.</p>
+        </div>
+        <div>
+            <label style="margin-top: 0;">Recortar borde inferior (píxeles)</label>
+            <input type="number" id="RecorteInferior" value="120" style="margin-top: 0.5rem;">
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">Quita el exceso de espacio blanco en la parte baja de la imagen PNG.</p>
+        </div>
+    </div>
+
     <div class="row">
         <div>
             <label>Servidor SMTP</label>
