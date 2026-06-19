@@ -268,3 +268,43 @@ input[type="color"] {
 #logoPie {
   max-width: 200px;
 }
+
+/* ========================================================================= */
+/* MEDIA QUERIES PARA CELULAR */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  #portada, #logoEmpresa, #logoPie {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
