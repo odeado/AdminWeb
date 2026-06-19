@@ -143,6 +143,9 @@ async function cargarConfigGeneral() {
     actualizarListaCorreos();
 
     document.getElementById("CorreoRemitente").value = datos.CorreoRemitente || "";
+    document.getElementById("SmtpPassword").value = datos.SmtpPassword || "";
+    document.getElementById("SmtpServer").value = datos.SmtpServer || "";
+    document.getElementById("SmtpPort").value = datos.SmtpPort || "";
     document.getElementById("HoraInicio").value = datos.HoraInicio || "";
     document.getElementById("RutaBase").value = datos.RutaBase || "";
     document.getElementById("Ghostscript").value = datos.Ghostscript || "";
@@ -268,6 +271,9 @@ async function guardar() {
         CorreoDestino: correosDestino,
         UsarCCO: document.getElementById("UsarCCO").checked,
         CorreoRemitente: document.getElementById("CorreoRemitente").value,
+        SmtpPassword: document.getElementById("SmtpPassword").value,
+        SmtpServer: document.getElementById("SmtpServer").value,
+        SmtpPort: document.getElementById("SmtpPort").value,
         HoraInicio: document.getElementById("HoraInicio").value,
         RutaBase: document.getElementById("RutaBase").value,
         Ghostscript: document.getElementById("Ghostscript").value
