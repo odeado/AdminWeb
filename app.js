@@ -246,7 +246,9 @@ onSnapshot(doc(db, "portadas", "estado"), (docSnap) => {
         
         // Latido del colector
         if (estado.UltimaConexion) {
-            const ultimaConexion = new Date(estado.UltimaConexion);
+            // Firebase puede devolver el integerValue como string o number, así que aseguramos que sea number
+            const ms = parseInt(estado.UltimaConexion, 10);
+            const ultimaConexion = new Date(ms);
             const ahora = new Date();
             const diferenciaMs = ahora - ultimaConexion;
             const diferenciaMinutos = diferenciaMs / 1000 / 60;
