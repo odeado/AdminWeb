@@ -243,6 +243,24 @@ onSnapshot(doc(db, "portadas", "estado"), (docSnap) => {
         const estado = docSnap.data();
         document.getElementById("estadoTitulo").innerText = estado.Estado || "Desconocido";
         document.getElementById("estadoDetalle").innerText = estado.Mensaje || "Sin mensaje";
+        
+        // Latido del colector
+        if (estado.UltimaConexion) {
+            const ultimaConexion = new Date(estado.UltimaConexion);
+            const ahora = new Date();
+            const diferenciaMs = ahora - ultimaConexion;
+            const diferenciaMinutos = diferenciaMs / 1000 / 60;
+            
+            if (diferenciaMinutos <= 2) {
+                document.getElementById("colectorIcono").innerText = "🟢";
+                document.getElementById("colectorDetalle").innerText = "Conectado. Última vez: " + ultimaConexion.toLocaleTimeString();
+                document.getElementById("colectorStatus").style.borderColor = "#4ade80";
+            } else {
+                document.getElementById("colectorIcono").innerText = "🔴";
+                document.getElementById("colectorDetalle").innerText = "Desconectado. Visto hace " + Math.round(diferenciaMinutos) + " min";
+                document.getElementById("colectorStatus").style.borderColor = "#f87171";
+            }
+        }
     }
 });
 
