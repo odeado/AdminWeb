@@ -171,6 +171,12 @@ async function cargar() {
     document.getElementById("AnchoLogoPie").value = datos.AnchoLogoPie || "200";
     document.getElementById("ColorTexto").value = datos.ColorTexto || "#555555";
     document.getElementById("TamanoTexto").value = datos.TamanoTexto || "16";
+    document.getElementById("ColorTituloCabecera").value = datos.ColorTituloCabecera || "#FFFFFF";
+    document.getElementById("TamanoTituloCabecera").value = datos.TamanoTituloCabecera || "36";
+    document.getElementById("ColorSubtitulo").value = datos.ColorSubtitulo || "#FFFFFF";
+    document.getElementById("TamanoSubtitulo").value = datos.TamanoSubtitulo || "20";
+    document.getElementById("ColorTextoPie").value = datos.ColorTextoPie || "#FFFFFF";
+    document.getElementById("TamanoTextoPie").value = datos.TamanoTextoPie || "12";
 
     logoEmpresaBase64 = datos.LogoEmpresaBase64 || null;
     logoPieBase64 = datos.LogoPieBase64 || null;
@@ -234,6 +240,15 @@ function actualizarPreview() {
     document.getElementById("pvTexto1").style.fontSize = document.getElementById("TamanoTexto").value + "px";
     document.getElementById("pvTexto2").style.color = document.getElementById("ColorTexto").value;
     document.getElementById("pvTexto2").style.fontSize = (parseInt(document.getElementById("TamanoTexto").value) - 2) + "px";
+
+    document.getElementById("pvTitulo").style.color = document.getElementById("ColorTituloCabecera").value;
+    document.getElementById("pvTitulo").style.fontSize = document.getElementById("TamanoTituloCabecera").value + "px";
+    
+    document.getElementById("pvSubtitulo").style.color = document.getElementById("ColorSubtitulo").value;
+    document.getElementById("pvSubtitulo").style.fontSize = document.getElementById("TamanoSubtitulo").value + "px";
+
+    document.getElementById("pvPie").style.color = document.getElementById("ColorTextoPie").value;
+    document.getElementById("pvPie").style.fontSize = document.getElementById("TamanoTextoPie").value + "px";
 }
 
 document.querySelectorAll("input").forEach(x => x.addEventListener("input", actualizarPreview));
@@ -293,6 +308,12 @@ async function guardar() {
         AnchoLogoPie: document.getElementById("AnchoLogoPie").value,
         ColorTexto: document.getElementById("ColorTexto").value,
         TamanoTexto: document.getElementById("TamanoTexto").value,
+        ColorTituloCabecera: document.getElementById("ColorTituloCabecera").value,
+        TamanoTituloCabecera: document.getElementById("TamanoTituloCabecera").value,
+        ColorSubtitulo: document.getElementById("ColorSubtitulo").value,
+        TamanoSubtitulo: document.getElementById("TamanoSubtitulo").value,
+        ColorTextoPie: document.getElementById("ColorTextoPie").value,
+        TamanoTextoPie: document.getElementById("TamanoTextoPie").value,
         LogoEmpresaBase64: logoEmpresaBase64,
         LogoPieBase64: logoPieBase64
     };

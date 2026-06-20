@@ -131,12 +131,45 @@
 
     <div class="row">
         <div>
+            <label>Color Título Cabecera</label>
+            <input type="color" id="ColorTituloCabecera" value="#FFFFFF">
+        </div>
+        <div>
+            <label>Tamaño Título Cabecera (px)</label>
+            <input type="number" id="TamanoTituloCabecera" value="36">
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <label>Color Subtítulo</label>
+            <input type="color" id="ColorSubtitulo" value="#FFFFFF">
+        </div>
+        <div>
+            <label>Tamaño Subtítulo (px)</label>
+            <input type="number" id="TamanoSubtitulo" value="20">
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
             <label>Color Texto Principal</label>
             <input type="color" id="ColorTexto">
         </div>
         <div>
             <label>Tamaño Texto (px)</label>
             <input type="number" id="TamanoTexto" value="16">
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <label>Color Texto Pie</label>
+            <input type="color" id="ColorTextoPie" value="#FFFFFF">
+        </div>
+        <div>
+            <label>Tamaño Texto Pie (px)</label>
+            <input type="number" id="TamanoTextoPie" value="12">
         </div>
     </div>
 
@@ -167,16 +200,15 @@
     <h2>Configuración General</h2>
 
     <label>Empresa</label>
-    <input id="Empresa" list="listaEmpresas" placeholder="Escribe o selecciona...">
-    <datalist id="listaEmpresas">
-        <option value="MercurioAntofagasta">
-        <option value="EstrellaAntofagasta">
-        <option value="MercurioCalama">
-        <option value="EstrellaLoa">
-        <option value="EstrellaTocopilla">
-        <option value="EstrellaIquique">
-        <option value="EstrellaArica">
-    </datalist>
+    <select id="Empresa">
+        <option value="MercurioAntofagasta">MercurioAntofagasta</option>
+        <option value="EstrellaAntofagasta">EstrellaAntofagasta</option>
+        <option value="MercurioCalama">MercurioCalama</option>
+        <option value="EstrellaLoa">EstrellaLoa</option>
+        <option value="EstrellaTocopilla">EstrellaTocopilla</option>
+        <option value="EstrellaIquique">EstrellaIquique</option>
+        <option value="EstrellaArica">EstrellaArica</option>
+    </select>
 
     <label>Correo Destino</label>
     
@@ -339,15 +371,9 @@
 
         </div>
 
-        <div id="pvPie">
-
-        </div>
-
         <div id="pieLogo">
-
-            <img src=""
-                 id="logoPie">
-
+            <img id="logoPie" src="" alt="Logo Pie">
+            <div id="pvPie"></div>
         </div>
 </div>
 
