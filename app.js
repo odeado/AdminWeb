@@ -169,6 +169,8 @@ async function cargar() {
     document.getElementById("ColorPie").value = datos.ColorPie || "#003A78";
     document.getElementById("AnchoLogo").value = datos.AnchoLogo || "200";
     document.getElementById("AnchoLogoPie").value = datos.AnchoLogoPie || "200";
+    document.getElementById("ColorTexto").value = datos.ColorTexto || "#555555";
+    document.getElementById("TamanoTexto").value = datos.TamanoTexto || "16";
 
     logoEmpresaBase64 = datos.LogoEmpresaBase64 || null;
     logoPieBase64 = datos.LogoPieBase64 || null;
@@ -227,6 +229,11 @@ function actualizarPreview() {
     document.getElementById("portada").style.width = document.getElementById("AnchoPortada").value + "px";
     document.getElementById("logoEmpresa").style.width = document.getElementById("AnchoLogo").value + "px";
     document.getElementById("logoPie").style.width = document.getElementById("AnchoLogoPie").value + "px";
+    
+    document.getElementById("pvTexto1").style.color = document.getElementById("ColorTexto").value;
+    document.getElementById("pvTexto1").style.fontSize = document.getElementById("TamanoTexto").value + "px";
+    document.getElementById("pvTexto2").style.color = document.getElementById("ColorTexto").value;
+    document.getElementById("pvTexto2").style.fontSize = (parseInt(document.getElementById("TamanoTexto").value) - 2) + "px";
 }
 
 document.querySelectorAll("input").forEach(x => x.addEventListener("input", actualizarPreview));
@@ -284,6 +291,8 @@ async function guardar() {
         ColorPie: document.getElementById("ColorPie").value,
         AnchoLogo: document.getElementById("AnchoLogo").value,
         AnchoLogoPie: document.getElementById("AnchoLogoPie").value,
+        ColorTexto: document.getElementById("ColorTexto").value,
+        TamanoTexto: document.getElementById("TamanoTexto").value,
         LogoEmpresaBase64: logoEmpresaBase64,
         LogoPieBase64: logoPieBase64
     };

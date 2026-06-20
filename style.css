@@ -227,7 +227,6 @@ input[type="color"] {
 }
 
 #logoEmpresa {
-  max-width: 200px;
   margin-bottom: 1rem;
 }
 
@@ -266,7 +265,7 @@ input[type="color"] {
 }
 
 #logoPie {
-  max-width: 200px;
+  width: 100%;
 }
 
 /* ========================================================================= */

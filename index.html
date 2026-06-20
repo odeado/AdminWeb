@@ -127,6 +127,19 @@
 
     </div>
 
+    </div>
+
+    <div class="row">
+        <div>
+            <label>Color Texto Principal</label>
+            <input type="color" id="ColorTexto">
+        </div>
+        <div>
+            <label>Tamaño Texto (px)</label>
+            <input type="number" id="TamanoTexto" value="16">
+        </div>
+    </div>
+
     <div class="row">
 
         <div>
@@ -154,7 +167,16 @@
     <h2>Configuración General</h2>
 
     <label>Empresa</label>
-    <input id="Empresa">
+    <input id="Empresa" list="listaEmpresas" placeholder="Escribe o selecciona...">
+    <datalist id="listaEmpresas">
+        <option value="MercurioAntofagasta">
+        <option value="EstrellaAntofagasta">
+        <option value="MercurioCalama">
+        <option value="EstrellaLoa">
+        <option value="EstrellaTocopilla">
+        <option value="EstrellaIquique">
+        <option value="EstrellaArica">
+    </datalist>
 
     <label>Correo Destino</label>
     
